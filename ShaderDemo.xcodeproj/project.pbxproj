@@ -16,9 +16,11 @@
 		9D56672C1D1ED1AA002FFD59 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D56672A1D1ED1AA002FFD59 /* Interface.storyboard */; };
 		9D56672E1D1ED1AA002FFD59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D56672D1D1ED1AA002FFD59 /* Assets.xcassets */; };
 		9D5667351D1ED1AA002FFD59 /* ShaderDemo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D5667341D1ED1AA002FFD59 /* ShaderDemo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9D56673A1D1ED1AA002FFD59 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5667391D1ED1AA002FFD59 /* InterfaceController.swift */; };
 		9D56673C1D1ED1AA002FFD59 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56673B1D1ED1AA002FFD59 /* ExtensionDelegate.swift */; };
 		9D56673E1D1ED1AA002FFD59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D56673D1D1ED1AA002FFD59 /* Assets.xcassets */; };
+		9D56674E1D1ED20E002FFD59 /* ShaderScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56674D1D1ED20E002FFD59 /* ShaderScene.swift */; };
+		9D5667501D1ED22D002FFD59 /* ecophon.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9D56674F1D1ED22D002FFD59 /* ecophon.fsh */; };
+		9D5667531D1ED2C1002FFD59 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5667521D1ED2C1002FFD59 /* InterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +78,12 @@
 		9D56672D1D1ED1AA002FFD59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D56672F1D1ED1AA002FFD59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5667341D1ED1AA002FFD59 /* ShaderDemo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ShaderDemo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D5667391D1ED1AA002FFD59 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9D56673B1D1ED1AA002FFD59 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9D56673D1D1ED1AA002FFD59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D56673F1D1ED1AA002FFD59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D56674D1D1ED20E002FFD59 /* ShaderScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShaderScene.swift; sourceTree = "<group>"; };
+		9D56674F1D1ED22D002FFD59 /* ecophon.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ecophon.fsh; sourceTree = "<group>"; };
+		9D5667521D1ED2C1002FFD59 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +150,22 @@
 		9D5667381D1ED1AA002FFD59 /* ShaderDemo WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9D5667391D1ED1AA002FFD59 /* InterfaceController.swift */,
+				9D5667511D1ED230002FFD59 /* Shaders */,
+				9D56674D1D1ED20E002FFD59 /* ShaderScene.swift */,
+				9D5667521D1ED2C1002FFD59 /* InterfaceController.swift */,
 				9D56673B1D1ED1AA002FFD59 /* ExtensionDelegate.swift */,
 				9D56673D1D1ED1AA002FFD59 /* Assets.xcassets */,
 				9D56673F1D1ED1AA002FFD59 /* Info.plist */,
 			);
 			path = "ShaderDemo WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9D5667511D1ED230002FFD59 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				9D56674F1D1ED22D002FFD59 /* ecophon.fsh */,
+			);
+			name = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,20 +236,20 @@
 				TargetAttributes = {
 					9D5667121D1ED1AA002FFD59 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4AYK7EYG4B;
-						DevelopmentTeamName = "Allan Lavell";
+						DevelopmentTeam = 637YS28D4G;
+						DevelopmentTeamName = "Allan lavell (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					9D5667241D1ED1AA002FFD59 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4AYK7EYG4B;
-						DevelopmentTeamName = "Allan Lavell";
+						DevelopmentTeam = 637YS28D4G;
+						DevelopmentTeamName = "Allan lavell (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					9D5667331D1ED1AA002FFD59 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4AYK7EYG4B;
-						DevelopmentTeamName = "Allan Lavell";
+						DevelopmentTeam = 637YS28D4G;
+						DevelopmentTeamName = "Allan lavell (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -284,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5667501D1ED22D002FFD59 /* ecophon.fsh in Resources */,
 				9D56673E1D1ED1AA002FFD59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,8 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5667531D1ED2C1002FFD59 /* InterfaceController.swift in Sources */,
 				9D56673C1D1ED1AA002FFD59 /* ExtensionDelegate.swift in Sources */,
-				9D56673A1D1ED1AA002FFD59 /* InterfaceController.swift in Sources */,
+				9D56674E1D1ED20E002FFD59 /* ShaderScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ShaderDemo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThinkRad.ShaderDemo.watchkitapp.watchkitextension;
@@ -459,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ShaderDemo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThinkRad.ShaderDemo.watchkitapp.watchkitextension;
@@ -548,6 +566,7 @@
 				9D5667441D1ED1AA002FFD59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D5667461D1ED1AA002FFD59 /* Build configuration list for PBXNativeTarget "ShaderDemo WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +575,7 @@
 				9D5667481D1ED1AA002FFD59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D56674A1D1ED1AA002FFD59 /* Build configuration list for PBXNativeTarget "ShaderDemo" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +584,7 @@
 				9D56674C1D1ED1AA002FFD59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
